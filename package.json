@@ -1,0 +1,19 @@
+{
+  "name": "mandrill-angular",
+  "version": "1.0.0",
+  "description": "This is an attempt at learning how to create client-side apps with [AngularJS](http://www.angularjs.org) as well as figuring out how to send emails without the use of a CMS or a backend that I have to deploy myself. I decided to use [Mandrill](http://www.mandrill.com) for these purposes, since they give a very generous free tier (20k messages per month free!).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/headcanon/mandrill-angular.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/headcanon/mandrill-angular/issues"
+  },
+  "homepage": "https://github.com/headcanon/mandrill-angular"
+}

@@ -1,0 +1,194 @@
+
+
+<div class="container">
+<div class= "row">
+<div class= "col-med-12">
+
+<ul class="list">
+  <li><a ng-href="#/" class="afontsize"><i class="fa fa-home fa-3x"></i></a></li>
+  <li><a ng-href="#/admin" class="afontsize"><i class="fa fa-user fa-3x"></i></a></li>
+</ul>
+  
+  <img src="images/imageone.png" class="imageone">
+
+
+
+    <legend class="talkreservetext">TalkReserve </legend>
+    <p class="paragraphfontone">This app will create an efficient process to serve a large scale of customers of the New Life Resource Cafe and the 2000+ members of New Life Christain Fellowship Church. The app holds an archive of recorded sermons preached from 2008 to 2014, total of 1,165.  The Cafe customers will be able to quickly place a audio sermon reservation at the customer service desk. In addition members of New Life Christian Fellowship church will be able to sign up for open volunteer positions within various ministries in the church.</p>
+
+</div>
+</div>
+        
+
+<div class="row secondpartofwebsite">
+<div class="col-md-12">
+
+  <img src="images/geometrictwo.gif" class="imagetwo">
+
+<legend class="talkreservetext">Instructions on how to use this application</legend>
+<p class="paragraphfonttwo"> 1st. Search for the product the customer is requesting. You may search by date or topic. Select the topic. <br> 2nd. Take the information from the customer to fill out the information, via name, phone, number, and etc. <br> 3rd. If needed please add any additional information in the notes section. <br> 4th. After topic is selected and the form is complete click "SEND". <br> 5th. When finish with order click the delete button to remove the information from the box. <br> This will send the product order to the Reserve@outlook.com </p> 
+<p class="paragraphfonttwo">If you have questions please speak with Chinenyem Nwadiugwu in person or text 843.364.3915. </p>
+</div>
+</div>
+
+
+
+<!-- Choose Product-->
+<div class="formsection">
+<div class="row">
+<div class=" col-md-12">
+<form class="">
+<input class="form-control widthofinputone " type="text" ng-model="search.month" placeholder="Search by Month and Year">
+
+<input class="form-control widthofinputone" type="text" ng-model="search.lesson" placeholder="Search by Topic">
+
+        <select ng-model="sender.newTopic.selectedTopic" ng-options="obj.month for obj in sermon |  filter:search:month" class="inputtextfont" size="2"  ></select>
+
+        <select ng-model="sender.newTopic.selectedGenre"   id="selectbox" multiple="multiple">
+        <option class="scroll" ng-repeat="label in sermon[sender.newTopic.selectedTopic.id].lesson" >{{label}}</option>
+        </select>
+        <button ng-click="addItem()" name="add" class="buttonone">Add Topic</button>
+</form>
+
+
+</div>
+</div>
+
+<!--Text input for topics -->
+<div class="row">
+<legend class="talkreservetext"> Product Reservations Customer Wants:</legend>
+<div class="  col-md-12" >
+<textarea id="some-text" ng-repeat="topic in topics" >
+Topic:  {{sender.newTopic.selectedGenre}}
+</textarea>
+</div>
+</div>
+
+
+
+<!-- Text input-->
+<div class="row">
+<div class="col-md-12">
+  <label class="stylelable">Name</label>
+  <div class="controls">
+    <input id="name" name="name" type="text" placeholder="Customer Name" class="input-xlarge widthofinput" ng-model="sender.name" >
+  </div>
+</div>
+</div>
+
+<!-- Text input-->
+<div class="row">
+<div class="col-md-12">
+  <label class="stylelable">Email</label>
+  <div class="controls">
+    <input id="email" name="email" type="email" placeholder="customer@example.com" class="input-xlarge widthofinput" ng-model="sender.email">
+    
+  </div>
+</div>
+</div>
+
+<!-- Text input-->
+<div class="row">
+<div class="col-md-12">
+  <label class="stylelable">Phone Number</label>
+  <div class="controls">
+    <input id="phone" name="phone" type="text" placeholder="555-555-5555" class="input-xlarge widthofinput" ng-model="sender.phone">
+    
+  </div>
+</div>
+</div>
+
+<!-- Text input-->
+<div class="row">
+<div class="col-md-12">
+  <label class="stylelable">Total Balance</label>
+  <div class="controls">
+    <input id="phone" name="phone" type="text" placeholder="$20.00" class="input-xlarge widthofinput" ng-model="sender.balance">
+    
+  </div>
+</div>
+</div>
+
+
+<!-- Text input-->
+<div class="row">
+<div class="col-md-12">
+  <label class="stylelable">Total Quanity of Item</label>
+  <div class="controls">
+    <input id="phone" name="phone" type="text" placeholder="1, 2, 3, etc" class="input-xlarge widthofinput" ng-model="sender.quanity">
+    
+  </div>
+</div>
+</div>
+
+<!-- Select Basic -->
+<div class="row">
+<div class="col-md-12">
+  <label class="stylelable">How Did The Customer Pay?</label>
+  <div class="controls">
+    <select id="how-awesome" name="how-awesome" class="paidselect" ng-model="sender.awesome">
+      <option>Cash</option>
+      <option>Check</option>
+      <option>Charge Card</option>
+      <option>Did not pay yet</option>
+    </select>
+  </div>
+</div>
+</div>
+
+<!-- Multiple Checkboxes -->
+<div class="row">
+  <div class="col-md-12">
+    <label class="stylelable">Paid Yes or No?</label>
+      <section class="controls" ng-repeat="person in sender.people" class="checkbox">
+        <input type="checkbox" name="like" value="{{person.name}}" ng-model="person.like" class="checkbox">
+        {{person.name}}
+        </input>
+        </section>
+  </div>
+</div>
+
+
+
+<!-- Textarea -->
+<div class="row">
+<div class="col-md-12">
+  <label class="stylelable">Note about this product reserve order?</label>
+  <div class="controls">                     
+    <textarea id="some-text" rows="3" ng-model="sender.randomtext" placeholder="Like, the customer may like an email sent when this order is complete." cols="60" rows="5"></textarea>
+  </div>
+</div>
+</div>
+
+
+
+<!-- Button -->
+<div class="row">
+<div class="col-md-12">
+  <div class="controls">
+    <button id="send" ng-click="send()" name="send" class="buttontwo">Send it!</button>
+  </div>
+</div>
+<div ng-class="messageStatusClass">
+  {{messageStatusContent}}
+</div>
+</div>
+
+
+
+
+<div class="row">
+  <div class="col-md-12">
+    <legend class="talkreservetext">Message Sent:</legend>
+    
+    <div class="well" ng-bind-html-unsafe="messageText" ng-repeat="message in messages"></div>
+    <button id="deletemessage" ng-click="deleteItem()" class="buttontwo">Delete The Message!</button>
+  </div>
+</div>
+</div>
+</div>
+   
+
+
+
+    
